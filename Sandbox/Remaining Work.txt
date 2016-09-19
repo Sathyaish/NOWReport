@@ -1,0 +1,9 @@
+WINTELLECT
+Question #, Row #, Details of the question at the time
+Delegate for propogating validation error - Question #, Row #, Details of the question at the time
+What if the Video Lesson was not created out of a file but was created by the user?
+Write unit tests
+build if required
+dev doc if required
+user documentation - devs who will use it
+async enumerator

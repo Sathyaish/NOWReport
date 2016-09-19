@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AC25295-1918-4414-943E-D88F4870F17C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wintellect.NOW</RootNamespace>
+    <AssemblyName>Wintellect.NOW.Reporting</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ReportingSettings.cs" />
+    <Compile Include="Configuration\WintellectNOWSettings.cs" />
+    <Compile Include="FlatPDFReport.cs" />
+    <Compile Include="FlatTextReport.cs" />
+    <Compile Include="FontStyle.cs" />
+    <Compile Include="GroupedTextReport.cs" />
+    <Compile Include="PDFReportPageEventHandler.cs" />
+    <Compile Include="PDFReportSettings.cs" />
+    <Compile Include="VideoActivityGroupedByEmail.cs" />
+    <Compile Include="GroupedPDFReport.cs" />
+    <Compile Include="VideoActivityGroupedByEmailPDFReport.cs" />
+    <Compile Include="VideoActivityGroupedByVideo.cs" />
+    <Compile Include="GroupedReport.cs" />
+    <Compile Include="Report.cs" />
+    <Compile Include="EmailAndCompletionPercentage.cs" />
+    <Compile Include="VideoActivity.cs" />
+    <Compile Include="CSVFile.cs" />
+    <Compile Include="FlatReport.cs" />
+    <Compile Include="ReportFormat.cs" />
+    <Compile Include="VideoActivityGroupedByVideoPDFReport.cs" />
+    <Compile Include="VideoAndCompletionPercentage.cs" />
+    <Compile Include="VideoLesson.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extensions\Wintellect.Extensions.csproj">
+      <Project>{46fb1347-aa02-4d14-9958-581710af9dd3}</Project>
+      <Name>Wintellect.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Wintellect.Resources.csproj">
+      <Project>{b931c33d-1b4e-4e08-b06a-d090e6f7560a}</Project>
+      <Name>Wintellect.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

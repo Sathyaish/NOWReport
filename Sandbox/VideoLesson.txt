@@ -1,0 +1,350 @@
+Dynamic Code Generation: Writing Code that Writes Code
+Instruction if any: e.g. Please select the most appropriate option for each of the multiple choice questions. To go to the next activity, click on link of "Next".
+
+1
+What is CodeDom?
+What is the full form of CodeDom?
+4
+B
+Code Definition Object Model
+Code Document Object Model
+Code Dynamic Obfuscation Model
+Code Determination Object Model
+03:33
+
+1
+What is CodeDom?
+CodeDom is a set of classes available in the .NET framework. Instantiating these classes creates:
+4
+A
+In-memory representations of programming artifacts
+Binary executables
+Class libraries only
+Windows forms
+03:33
+
+1
+What is CodeDom?
+Is the following statement true? "Using CodeDom, code can be created in-memory and then serialized to a file. CodeDom can then even be used to compile this file into an executable program.
+2
+A
+Yes, it is true.
+No, it isn't true.
+03:33
+
+1
+What is CodeDom?
+Is CodeDom the only technology available in the .NET framework that helps us generate code?
+2
+B
+Yes
+No
+03:33
+
+1
+What is CodeDom?
+Which kind of a technology is CodeDom?
+4
+B
+An open source project available online
+A set of classes included in the .NET framework
+A part of the Mono project
+A separately downloadable framework available on the Microsoft website, just like Enterprise Library or the Microsoft Extensibility Framework
+03:33
+
+1
+Why use CodeDom?
+CodeDom is best suited to:
+4
+C
+Generating C# code dynamically
+Writing compilers
+Generating code in multiple languages from the same CodeDom code
+Writing code that will dynamically generate ASP.NET Web Forms applications
+09:20
+
+1
+Why use CodeDom?
+Which of the technologies is better suited for generating proxies:
+4
+B
+CodeDom
+Reflection.Emit
+None of the above two mentioned technologies
+You can't generate proxies in .NET. It's just not possible.
+09:20
+
+1
+Why use CodeDom?
+Why do we generate proxies?
+4
+C
+Proxies are especially useful in remote communication as they mimic an object at both the communication end-points.
+To dynamically add or inject services, such as cross-cutting concerns, or aspects, that we did not write before-hand to our objects at runtime.
+Both (a) and (b) above.
+Just for fun, because we can, and we have the time.
+09:20
+
+1
+Why use CodeDom?
+.NET is limited in that it doesn't allow us to write code that will generate a proxy.
+2
+B
+True
+False
+09:20
+
+1
+Why use CodeDom?
+Why is typing in string arguments to ASP.NET MVC's @Html.ActionLink method error prone?
+4
+D
+Because strings are immutable
+Because strings hog a lot of memory and concatening two strings can slow our application down.
+The assertion made in the question is not true. In fact, passing string arguments is not error prone in this context.
+Because you can misspell a string argument and your code will still compile but raise an exception at runtime. This allows for not being able to catch errors early on.
+09:20
+
+1
+Real World Applications of CodeDom
+Which of these utilities use CodeDom to generate code?
+4
+C
+Tlbimp.exe, to import type information from COM components into the managed code environment
+csc.exe, to compile C# code into an executable
+SvcUtil.exe, to generate SOAP proxies
+None of the above
+10:02
+
+1
+Real World Applications of CodeDom
+Which of these utilities use CodeDom to generate code?
+4
+D
+All code generators in Visual Studio from WinForms to ASP.NET Web Forms / code behind, to WCF
+SvcUtil.exe, to generate SOAP proxies
+XSD.exe, to generate classes that serialize and deserialize managed types in the .NET framework
+All of the above
+10:02
+
+1
+Real World Applications of CodeDom
+Which code generation technology does Microsoft ASP.NET MVC use in order to generate the scaffolding code?
+4
+A
+T4 Templates
+T3 Templates
+Abrakadabra.NET
+The above options are just non-sense names, so none of them.
+10:02
+
+1
+Real World Applications of CodeDom
+What is Dapper?
+4
+A
+An ORM software used by StackOverflow
+The Web API of StackOverflow
+A code name for the core engine of Twitter
+None of the above
+10:02
+
+1
+CodeDom Architecture
+Two very important classes that you need to remember in order to understand the architecture of CodeDom are:
+4
+C
+CodeDomUnit and CodeDomObject
+CodeCompileUnit and CodeDomObject
+CodeCompileUnit and CodeDomProvider
+CodeInstance and CodeObjectProvider
+15:42
+
+1
+CodeDom Architecture
+The top-most object in a CodeDom that represents the entire code object graph or the CodeDom itself is called:
+4
+D
+CodeAssembly
+CodeCompilableUnit
+CodeNamespace
+CodeCompileUnit
+15:42
+
+1
+CodeDom Architecture
+The CodeCompileUnit compiles into an assembly
+2
+A
+True
+False
+15:42
+
+1
+CodeDom Architecture
+Which of the following heirarchies is representative of code structure:
+4
+A
+A CodeCompileUnit contains namespace objects, which contain class objects, which contain method objects, which contain objects representing statements and expressions
+A CodeCompileUnit contains assembly objects, which contain code objects, which contain assembly member objects, which contain methods
+A CodeAssembly object contains a CodeCompileUnit, which contains namespaces, which contain class objects, which contain methods and statements
+None of the above
+15:42
+
+1
+CodeDom Architecture
+The CodeCompileUnit object is language agnostic
+4
+A
+True
+False
+It is language agnostic only in the case of C#
+It is language agnostic only on Mondays
+15:42
+
+1
+CodeDom Architecture
+The CodeCompileUnit can contain more than one namespace
+4
+A
+True
+False
+Only on Mondays
+Sometimes true, sometimes false
+15:42
+
+1
+CodeDom Architecture
+The CodeDomProvider provides interfaces for three services. They are:
+4
+B
+Lexer, Parser, Converter
+Parser, Generator, Compiler
+Compiler, Translator, Dispatcher
+TextWriter, StreamWriter, Compiler
+15:42
+
+1
+CodeDom Architecture
+Which of the following languages does not yet have a CodeDomProvider implementation?
+4
+C
+C#
+F#
+IronRuby
+Microsoft Visual C++
+15:42
+
+1
+What CodeDom can and cannot do
+Which of the following statements is not true:
+4
+D
+CodeDom can generate XML documentation comments
+CodeDom can generate comments
+CodeDom can generate expressions and/or statements
+None of the above
+24:09
+
+1
+What CodeDom can and cannot do
+Using CodeDom, you can round-trip between source code and the binary
+2
+B
+True
+False
+24:09
+
+1
+What CodeDom can and cannot do
+CodeDom also has a parser, therefore you can use CodeDom to read source code and obtain a CodeCompileUnit from it
+2
+B
+True
+False
+24:09
+
+1
+What CodeDom can and cannot do
+CodeDom can be used to round-trip between source code and the CodeCompileUnit
+2
+B
+True
+False
+24:09
+
+1
+What CodeDom can and cannot do
+Using CodeDom, we may:
+4
+D
+Read source code from a file and compile the file into an assembly
+Generate source code, generate an assembly from the source code and compile the assembly
+None of the above
+Both (a) and (b)
+24:09
+
+1
+What CodeDom can and cannot do
+We may perform the following with CodeDom:
+4
+D
+Symolic and semantic analysis of code
+Decompile source code from a binary
+Both of the above
+Neither (a) nor (b)
+24:09
+
+1
+What CodeDom can and cannot do
+Full fidelity in the context of code generation tools means:
+4
+B
+When a tool generates code correctly
+When a tool has the capability to represent your source code exactly as you wrote it, with comments and spaces all intact as you wrote them
+The tool provides type safety against malicious code injection
+None of the above
+24:09
+
+1
+What CodeDom can and cannot do
+CodeDom provides full fidelity:
+2
+B
+True
+False
+24:09
+
+1
+Alternatives for Code Generation
+Which of the following technologies is an alternative way to generate source code?
+4
+A
+Roslyn
+Web Forms
+Windows Forms
+None of the above
+38:00
+
+1
+Alternatives for Code Generation
+Which of the following IDE's use NRefactory:
+4
+B
+Microsoft Visual Studio 2010
+SharpDevelop
+Eclipse
+NetBeans
+38:00
+
+1
+Alternatives for Code Generation
+Which of the following features does Roslyn have?
+4
+D
+It provides full fidelity
+Exposes the entire compiler pipeline as an API
+Allows you to parse a source code file and create an Abstract Syntax Tree or object model out of it
+All of the above
+38:00
+

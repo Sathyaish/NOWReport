@@ -1,0 +1,47 @@
+This is work-in-progress. I've read from the CSV into a VideoLesson object. I also have a console app that sort of tests the integrated unit as a whole as to whether or not it is working. This console app also helps me regression test. I have to write the part that writes to the PDF file.
+
+I am in the process of defining a professional format for the report. This is time-consuming.
+
+Other open points include:
+
+MUST HAVE's:
+1) Decide how to write to the PDF. Options include: 
+a) write to Word template first, then use the Microsoft Word PDF add-in to print that file to PDF.
+  (i) Use Open XML document API to read Word template and write to the Word file.
+  (ii) Use COM Interop Word lib to read from and write to Word
+b) Use iTextSharp to write directly to PDF. This is going to be painful as it involves writing from scratch just like you used Win32 API to write to a Device Context specifying each and every little thing -- GetStockObject(BRUSH_YADA_YADA), CreateRectangle(yada, yada). It's a managed API, but still, it's painful drudgery to get a professional looking report.
+
+
+2) Write the unit tests
+
+3) May be put a Web front-end to it. Aaargh! This is going to be painful. Even then, if I have to, I'll do it with MVC and not WebForms.
+
+NICE TO HAVE's AND SO WILL DO LATER, IF AT ALL:
+1) Separate out the CSVFile class from its reader. Introduce a dependency constructor injection.
+2) May be, just may be, tomorrow, use a DI container to inject dependencies
+3) Make the file I/O to CSV, Word, PDF, etc. asynchronous.
+4) This might be a must-have instead of a nice-to-have. Think more about:
+a) Making a custom collection out of the VideoLesson.Questions property and the VideoLessons.Question.Options property because
+(i) The user needs to be able to add to them, so their compile-time type should allow that. It better be something that allows that. I've currently graduated the IEnumerable<T> to IList<T> but while that allows for read/write, it's not a good solution. To know the reason, keep reading the other points.
+(ii) In order to send useful validation error information (please see point (5)(i)), the Question class must have a question number, row number and all kinds of metadata such as "which video lesson do I belong to?" and "was this video lesson deserialized from some kind of a file/CSV for example or is it something that the user code/developer is constructing?" Decisions, decision! Code restructuring.
+5) When a validation error occurs, propagate the error and then make a decision about whether to continue or not. If it's not that big a deal, keep going. Otherwise, stop after exception.
+(i) Design the various validation scenarios and what all context/information/event args need to be passed and why. Then re-structure the current code to accommodate those changes.
+6) Related to point (1) in this list of NICE TO HAVE's: Separate out the CSVFile from its reader via interface seggregation so that you can switch to a different, say, LinqToExcel reader if you don't like the current file-stream-based reader. Similarly, separate out the writing to the PDF file via the same interface seggregation to use different kinds of writers based on the options I have. For the available options, please see point (1) in the MUST HAVE's list.
+
+There are more things that were playing on my mind about this but I can't remember them. They're mostly nice to have's.
+
+PLAN: Just focus on the MUST HAVE's and finish it and ship. Don't do any of the nice to have's unless there's plenty of time, it is asked for and it is paid. Then, it'll have to be paid, of course because it's getting insanely time-consuming to do for free. If it ain't broke, don't fix it.
+
+LOG TIME SPENT ON THIS THING: Even though it's not paid work, keep a track of time just to get better at making good estimations in the future.
+Friday: 1 hour
+Saturday: 2 hours
+Sunday: 4 hours
+Monday: 4 hours
+
+-----------------------------
+Total till Monday, AM: 11 hours
+-----------------------------
+
+ESTIMATED REMAINING TIME:
+Optimistic estimate: 12 hours
+Pessimistic estimate: 20 hours
